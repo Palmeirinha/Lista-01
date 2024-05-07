@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 08</title>
+</head>
+<body>
+
+    <main>
+        <h2>Questão 08</h2>
+
+        <div>
+            <input type="radio" id="opcao1" name="opcao" onclick="opcao1()">
+            <label for="opcao1">Opção 1</label>
+        </div>
+        <div>
+            <input type="radio" id="opcao2" name="opcao" onclick="opcao2()">
+            <label for="opcao2">Opção 2</label>
+        </div>
+        <div>
+            <input type="radio" id="opcao3" name="opcao" onclick="opcao3()">
+            <label for="opcao3">Opção 3</label>
+        </div><br>
+        
+
+        <div id="resultado"></div>
+
+    </main>
+    
+    
+    <script>
+        
+        function opcao1() {
+            document.getElementById("resultado").innerText = "Opção 1 selecionada";
+            document.getElementById("opcao2").checked = false;
+            document.getElementById("opcao3").checked = false;
+        }
+        function opcao2() {
+            document.getElementById("resultado").innerText = "Opção 2 selecionada";
+            document.getElementById("opcao1").checked = false;
+            document.getElementById("opcao3").checked = false;
+        }
+        function opcao3() {
+            document.getElementById("resultado").innerText = "Opção 3 selecionada";
+            document.getElementById("opcao1").checked = false;
+            document.getElementById("opcao2").checked = false;
+        }
+
+    </script>
+</body>
+</html>

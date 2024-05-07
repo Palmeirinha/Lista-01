@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 05</title>
+</head>
+<body>
+
+    <h2>Questão 05</h2>
+
+    <form id="meuForm">
+        <label for="letra">Informe a variável (letra):</label>
+        <input type="text" id="letra" name="letra">
+
+        <button type="submit">Exibir</button>
+    </form>
+
+    <div id="resultado"></div>
+
+    <script>
+
+        const formulario = document.getElementById('meuForm');
+        formulario.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            const letra = document.getElementById('letra').value.toLowerCase();
+
+            let resultado;
+
+            if (letra === 'a' || letra === 'b') {
+                resultado = letra.toUpperCase();
+            } else {
+                resultado = 'Outra letra!';
+            }
+
+            document.getElementById("resultado").innerText = resultado;
+        });
+
+    </script>
+</body>
+</html>

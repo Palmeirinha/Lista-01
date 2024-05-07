@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 06</title>
+</head>
+<body>
+
+    <h2>Questão 06</h2>
+
+    <form id="meuForm">
+        <div>
+            <input type="number" id="num00" name="num00">
+            <input type="number" id="num01" name="num01">
+            <input type="number" id="num02" name="num02">
+        </div>
+        <div>
+            <input type="number" id="num10" name="num10">
+            <input type="number" id="num11" name="num11">
+            <input type="number" id="num12" name="num12">
+        </div>
+        <div>
+            <input type="number" id="num20" name="num20">
+            <input type="number" id="num21" name="num21">
+            <input type="number" id="num22" name="num22">
+        </div>
+
+        <button type="submit">Exibir</button>
+    </form>
+
+    <div id="resultado"></div>
+
+    <script>
+
+        const formulario = document.getElementById('meuForm');
+        formulario.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            const matriz = [
+                [0, 0, 0],
+                [0, 0, 0],
+                [0, 0, 0]
+            ];
+
+            for (let l = 0; l < 3; l++) {
+                for (let c = 0; c < 3; c++) {
+                    const inputId = 'num' + l + c;
+                    matriz[l][c] = parseInt(document.getElementById(inputId).value);
+                }
+            }
+
+            let resultado = 0;
+
+            for (let l = 0; l < 3; l++) {
+                for (let c = 0; c < 3; c++) {
+                    resultado += matriz[l][c];
+                }
+            }
+
+            document.getElementById("resultado").innerText = "A soma dos números é: " + resultado;
+
+        });
+
+    </script>
+</body>
+</html>

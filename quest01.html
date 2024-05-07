@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 01</title>
+</head>
+<body>
+    <main>
+        <h2>Questão 01</h2>
+
+        <form id="meuFormulario">
+            <div>
+                <label for="numero1">Informe o primeiro número:</label>
+                <input type="number" id="numero1" name="numero1">
+            </div><br>
+            <div>
+                <label for="numero2">Informe o segundo número:</label>
+                <input type="number" id="numero2" name="numero2">
+            </div>
+
+            <button type="submit">Encontrar o número maior</button>
+        </form>
+
+        <div id="resultado"></div>
+    </main>
+    
+    <script>
+        const formulario = document.getElementById('meuFormulario');
+        formulario.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            const numero1 = parseFloat(document.getElementById('numero1').value);
+            const numero2 = parseFloat(document.getElementById('numero2').value);
+
+            let resultado;
+            if (numero1 > numero2) {
+                resultado = "O maior número é: " + numero1; 
+            } else if (numero1 < numero2) {
+                resultado = "O maior número é: " + numero2; 
+            } else {
+                resultado = "Os números são iguais.";
+            }
+
+            document.getElementById("resultado").innerText = resultado;
+        });
+    </script>
+</body>
+</html>
